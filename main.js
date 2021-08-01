@@ -42,7 +42,7 @@ const addForm =(event) => {
     };
 };
 
-const errorMessage= (event, ) => {
+const errorMessage= (event) => {
     event.preventDefault();
     const targetId = event.target.id;
     const targetType = event.target.type;
