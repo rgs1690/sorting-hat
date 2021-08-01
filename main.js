@@ -1,1 +1,4 @@
-console.log("I'm Here!")
+const renderToDom =(divId, textToRender) => {
+    const selectedDiv= document.querySelector(divId);
+    selectedDiv.innerHTML = textToRender;
+};
