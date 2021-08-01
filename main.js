@@ -42,9 +42,20 @@ const addForm =(event) => {
     };
 };
 
+const errorMessage= (event) => {
+    event.preventDefault();
+    const targetId = event.target.id;
+    const targetType = event.target.type;
+    if(targetType === "submit" && document.querySelector("#input").value === "") {
+        alert("ERROR: Please enter name."); 
+    };
+};
+
+
+
 const buttonEvents = () => {
     document.querySelector("#introCard").addEventListener("click", addForm);
-
+    document.querySelector("#sortForm").addEventListener("click", errorMessage);
 };
 
 const startApp = () => {
