@@ -28,9 +28,9 @@ const createForm = () => {
     <form id="studentForm">
     <div class="mb-3">
       <label for="name" class="form-label">Student's Name:</label>
-      <input type="text" class="form-control" id="input" required = "required"/>
+      <input type="text" class="form-control" id="input" required/>
       <div id="formText" class="form-text"></div>
-    <button type="submit" id="sort"class="btn btn-primary">Start Sorting!</button>
+    <button type="submit"class="btn btn-primary">Start Sorting!</button>
   </form>
      `
      renderToDom("#sortForm", domString);
@@ -41,6 +41,7 @@ const addForm =(event) => {
     const targetType = event.target.type;
     if (targetType === "button"){
         createForm();
+        formEvents();
     };
 };
 
@@ -52,7 +53,7 @@ const createStudentCard = (array) =>{
         <div class="card-body">
         <h5 class="card-title">${student.name}</h5>
         <p class="card-text">${student.house}</p>
-        <button type="submit" id="expel"class="btn btn-primary">Expel</button>
+        <button type="button" id="expel"class="btn btn-primary">Expel</button>
         </div>
     </div>
     `
@@ -62,15 +63,12 @@ const createStudentCard = (array) =>{
 };
 const sortButton= (event) => {
     event.preventDefault();
-    const targetType = event.target.type;
-    if (targetType === "submit") {
     const student = {
         name: document.querySelector("#input").value,
         house: assignHouse(1,5)
       };
       studentArray.push(student);
       createStudentCard(studentArray);
-    };
 };
  
 const assignHouse = (min, max) => {
@@ -88,7 +86,6 @@ const assignHouse = (min, max) => {
 
 const buttonEvents = () => {
     document.querySelector("#introCard").addEventListener("click", addForm);
-    document.querySelector("#sortForm").addEventListener("click", sortButton);
 };
 
 const formEvents = () => {
@@ -100,7 +97,6 @@ const startApp = () => {
     introCard();
     createStudentCard(studentArray);
     buttonEvents();
-    formEvents();
-};
+  };
 
 startApp(); 
