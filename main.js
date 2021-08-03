@@ -60,14 +60,7 @@ const newStudents= () => {
    studentArray.push(student);
   
 };
-errorMessage = (event) => {
-    event.preventDefault();
-    const targetId = event.target.id;
-    const targetType = event.target.type;
-    if (targetType ==="sumbit" && document.querySelector("#input" === "")){
-        alert("please fill out name");
-    }
-}
+
 
 const sortButton= (event) => {
     
