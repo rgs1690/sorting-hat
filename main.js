@@ -45,34 +45,38 @@ const addForm =(event) => {
 
 voldArmy = []; 
 studentArray = []
-
-const newStudents= () => {
-  
-    const student = `
+const createStudentCard = (array) =>{
+    let domString=""
+    array.forEach((student) => {
+    domString += `
     <div class="card" style="width: 18rem;">
         <div class="card-body">
-        <h5 class="card-title">${document.querySelector("#input").value}</h5>
-        <p class="card-text">${assignHouse(1,5)}</p>
+        <h5 class="card-title">${student.name}</h5>
+        <p class="card-text">${student.house}</p>
         <button type="submit" id="expel"class="btn btn-primary">Expel</button>
         </div>
     </div>
     `
-   studentArray.push(student);
-  
+    renderToDom("#firstYears", domString);
+    });
+    
 };
 
-
 const sortButton= (event) => {
-    
-    const targetId = event.target.id;
+    event.preventDefault();
     const targetType = event.target.type;
-    if(targetType === "submit"){ 
-        renderToDom("#firstYears", studentArray)
-        };
-        event.preventDefault();
+    if (targetType === "submit") {
+    
+    const student = {
+        name: document.querySelector("#input").value,
+        house: assignHouse(1,5)
+      };
+      studentArray.push(student);
+      createStudentCard(studentArray);
+       
     };
-
-assignHouse = (min, max) => {
+};
+ assignHouse = (min, max) => {
     const houseNum =  Math.floor(Math.random() * (max - min) + min);
     if (houseNum == 1) {
         return "Gryffindor";
@@ -88,12 +92,14 @@ assignHouse = (min, max) => {
 const buttonEvents = () => {
     document.querySelector("#introCard").addEventListener("click", addForm);
     document.querySelector("#sortForm").addEventListener("click", sortButton);
-    document.querySelector("#sortForm").addEventListener("click", newStudents);
+    
 };
 
 const startApp = () => {
     introCard();
+    createStudentCard(studentArray);
     buttonEvents();
+  
 };
 
 startApp(); 
