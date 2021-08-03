@@ -24,8 +24,8 @@ const createForm = () => {
     <form>
     <div class="mb-3">
       <label for="name" class="form-label">Student's Name:</label>
-      <input type="text" class="form-control" id="input" aria-describedby="studentsName" required ="required"/>
-      <div id="formText" class="form-text">Type your name into the field and I'll tell you what house you belong in!</div>
+      <input type="text" class="form-control" id="input" required = "required"/>
+      <div id="formText" class="form-text"></div>
     <button type="submit" id="sort"class="btn btn-primary">Start Sorting!</button>
   </form>
      `
@@ -60,18 +60,24 @@ const newStudents= () => {
    studentArray.push(student);
   
 };
-
-
-const sortButton= (event) => {
-  
+errorMessage = (event) => {
     event.preventDefault();
     const targetId = event.target.id;
     const targetType = event.target.type;
-    if(targetType === "submit" && document.querySelector("#input")) {
-        renderToDom("#firstYears", studentArray);
-    };
-};
+    if (targetType ==="sumbit" && document.querySelector("#input" === "")){
+        alert("please fill out name");
+    }
+}
 
+const sortButton= (event) => {
+    
+    const targetId = event.target.id;
+    const targetType = event.target.type;
+    if(targetType === "submit"){ 
+        renderToDom("#firstYears", studentArray)
+        };
+        event.preventDefault();
+    };
 
 assignHouse = (min, max) => {
     const houseNum =  Math.floor(Math.random() * (max - min) + min);
@@ -85,13 +91,6 @@ assignHouse = (min, max) => {
         return "Hufflepuff";
     };
     };
-
-
-
-
-
-
-
 
 const buttonEvents = () => {
     document.querySelector("#introCard").addEventListener("click", addForm);
