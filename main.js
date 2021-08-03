@@ -23,8 +23,8 @@ const createForm = () => {
     const domString = `
     <form>
     <div class="mb-3">
-      <label for="exampleInputEmail1" class="form-label">Student's Name:</label>
-      <input type="text" class="form-control" id="input" aria-describedby="studentsName">
+      <label for="name" class="form-label">Student's Name:</label>
+      <input type="text" class="form-control" id="input" aria-describedby="studentsName" required ="required"/>
       <div id="formText" class="form-text">Type your name into the field and I'll tell you what house you belong in!</div>
     <button type="submit" id="sort"class="btn btn-primary">Start Sorting!</button>
   </form>
@@ -42,20 +42,61 @@ const addForm =(event) => {
     };
 };
 
-const errorMessage= (event) => {
+
+voldArmy = []; 
+studentArray = []
+
+const newStudents= () => {
+  
+    const student = `
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+        <h5 class="card-title">${document.querySelector("#input").value}</h5>
+        <p class="card-text">${assignHouse(1,5)}</p>
+        <button type="submit" id="expel"class="btn btn-primary">Expel</button>
+        </div>
+    </div>
+    `
+   studentArray.push(student);
+  
+};
+
+
+const sortButton= (event) => {
+  
     event.preventDefault();
     const targetId = event.target.id;
     const targetType = event.target.type;
-    if(targetType === "submit" && document.querySelector("#input").value === "") {
-        alert("ERROR: Please enter name."); 
+    if(targetType === "submit" && document.querySelector("#input")) {
+        renderToDom("#firstYears", studentArray);
     };
 };
+
+
+assignHouse = (min, max) => {
+    const houseNum =  Math.floor(Math.random() * (max - min) + min);
+    if (houseNum == 1) {
+        return "Gryffindor";
+    } else if (houseNum == 2) {
+        return "Syltherin"; 
+    } else if (houseNum == 3) {
+        return "Ravenclaw";
+    } else {
+        return "Hufflepuff";
+    };
+    };
+
+
+
+
+
 
 
 
 const buttonEvents = () => {
     document.querySelector("#introCard").addEventListener("click", addForm);
-    document.querySelector("#sortForm").addEventListener("click", errorMessage);
+    document.querySelector("#sortForm").addEventListener("click", sortButton);
+    document.querySelector("#sortForm").addEventListener("click", newStudents);
 };
 
 const startApp = () => {
