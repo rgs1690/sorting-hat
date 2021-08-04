@@ -4,3 +4,9 @@ body{
 .first-years{
     background-color: brown;
 };
+.card-body{
+    background-color: chocolate;
+};
+.intro-card{
+    border: solid 10px black;
+}
