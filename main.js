@@ -1,6 +1,12 @@
 
 voldArmy = []; 
 studentArray = []
+const filterButton = () => {
+    const domString =`
+    <button type="button" class="btn btn-primary" id="filterStudents">Filter Students</button>
+    `;
+    renderToDom("#filterContainer", domString);
+}
 
 const renderToDom =(divId, textToRender) => {
     const selectedDiv= document.querySelector(divId);
@@ -113,21 +119,27 @@ const expelledStudents = (array) => {
     });
     renderToDom("#voldArmy", domString);
 };
-    ;
-const buttonEvents = () => {
+    const filterStudents = (array,house) =>{
+    return  array.filter((studentObject) => studentObject.house === house);
+    };
+
+
+    const buttonEvents = () => {
     document.querySelector("#introCard").addEventListener("click", addForm);
     document.querySelector("#firstYears").addEventListener("click", expelStudents);
 };
 
-const formEvents = () => {
+
+    const formEvents = () => {
     const formElement = document.querySelector("#studentForm");
     formElement.addEventListener("submit", sortButton);
 };
 
-const startApp = () => {
+    const startApp = () => {
     introCard();
+    filterButton();
     createStudentCard(studentArray);
     buttonEvents();
   }; 
 
-startApp(); 
+    startApp(); 
