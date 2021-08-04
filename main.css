@@ -6,4 +6,7 @@ body{
 };
 .card-body{
     background-color: chocolate;
+};
+.intro-card{
+    border: solid 10px black;
 }

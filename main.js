@@ -1,12 +1,15 @@
 
 voldArmy = []; 
 studentArray = []
-const filterButton = () => {
-    const domString =`
-    <button type="button" class="btn btn-primary" id="filterStudents">Filter Students</button>
-    `;
-    renderToDom("#filterContainer", domString);
-}
+// const filterButtons = () => {
+//     const domString =`
+//     <button type="button" class="btn btn-primary" id="ravenclaw">Ravenclaw</button>
+//     <button type="button" class="btn btn-primary" id="gryffindor">Gryffindor</button>
+//     <button type="button" class="btn btn-primary" id="slytherin">Slytherin</button>
+//     <button type="button" class="btn btn-primary" id="hufflepuff">Hufflepuff</button>
+//     `;
+//     renderToDom("#filterContainer", domString);
+// }
 
 const renderToDom =(divId, textToRender) => {
     const selectedDiv= document.querySelector(divId);
@@ -119,14 +122,33 @@ const expelledStudents = (array) => {
     });
     renderToDom("#voldArmy", domString);
 };
-    const filterStudents = (array,house) =>{
-    return  array.filter((studentObject) => studentObject.house === house);
-    };
+    // const filterStudents = (array,house) =>{
+    // return array.filter((studentObject) => studentObject.house === house);
+    // };
 
+    // const handleFilter = (event) =>{
+    //     if(event.target.id === "gryffindor") {
+    //        const gryffindor = filterStudents(studentArray, event.target.id);
+    //         createStudentCard(gryffindor);
+    //        }
+    //     if(event.target.id === "ravenclaw") {
+    //         const ravenclaw = filterStudents(studentArray, event.target.id);
+    //          createStudentCard(ravenclaw);
+    //         }
+    //     if(event.target.id === "slytherin") {
+    //             const slytherin = filterStudents(studentArray, event.target.id);
+    //              createStudentCard(slytherin);
+    //         }
+    //     if(event.target.id === "hufflepuff") {
+    //             const hufflepuff = filterStudents(studentArray, event.target.id);
+    //              createStudentCard(hufflepuff);
+    //             }    
+    //  };
 
     const buttonEvents = () => {
     document.querySelector("#introCard").addEventListener("click", addForm);
     document.querySelector("#firstYears").addEventListener("click", expelStudents);
+    // document.querySelector("#filterContainer").addEventListener("click", handleFilter);
 };
 
 
@@ -137,7 +159,7 @@ const expelledStudents = (array) => {
 
     const startApp = () => {
     introCard();
-    filterButton();
+    // filterButtons();
     createStudentCard(studentArray);
     buttonEvents();
   }; 
