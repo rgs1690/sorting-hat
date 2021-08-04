@@ -4,9 +4,27 @@ body{
 .first-years{
     background-color: brown;
 };
-.card-body{
-    background-color: chocolate;
-};
+.card{
+    margin: 20px 20px;
+}
 .intro-card{
     border: solid 10px black;
+}
+#introCard{
+     border: solid 10px black;
+}
+.card-title{
+    color: red;
+}
+.cardStyles{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.firstYears{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    
+    background-color: royalblue;
 }

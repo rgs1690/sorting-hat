@@ -19,7 +19,7 @@ const renderToDom =(divId, textToRender) => {
 const introCard = () => {
     const domString =`
     <div class="card">
-     <div class="card-body">
+     <div class="cardBody">
             <h5 class="card-title">Welcome to Hogwarts!</h5>
             <p class="card-text">"Now slip me snug around your ears,<br>
             I've never yet been wrong,<br>
