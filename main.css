@@ -1,12 +1,116 @@
 body{
-    background-color: darkgoldenrod;
+    background-image: url("https://badgerherald.com/wordpress/wp-content/uploads/2020/11/6402945529_654b96d482_b.jpg");
 };
 .first-years{
     background-color: brown;
 };
-.card-body{
-    background-color: chocolate;
-};
-.intro-card{
-    border: solid 10px black;
+.card{
+    margin: 20px 20px;
 }
+.introCardContainer {
+    align-content: center;
+}
+.intoCard{
+    background-color: grey;
+    width: 500px;
+    margin: 0 auto;
+    float: none; 
+    margin-bottom: 10px; 
+}
+
+.intoCardBody{
+    border: solid 5px darkslategrey;
+    text-align: center;
+}
+.sortForm {
+    align-content: center;
+
+}
+.form-label{
+    color: gold;
+    font-size: 20px;
+    font-weight: bold;
+}
+.form-control{
+    width: 300px;
+}
+.btn-form{
+    background-color: gold;
+    color: firebrick;
+    font-weight: bold;
+}
+.card-title{
+    color: red;
+}
+.cardStyles{
+    display: flex;
+    justify-content: space-between;
+   margin: 10px;
+}
+.firstYears{
+    background-color: honeydew;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin-right: 50px; 
+}
+.voldArmy{
+    background-color: honeydew;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-left: 50px; 
+}
+.expelCard {
+    border: solid 3px black;
+    background-color: darkgreen;
+    text-align: center;
+    margin: 10px 10px;
+}
+.expelCardTitle{
+    color: black;
+    font-size: 20px;
+    font-weight:bolder;
+}
+.expelCardText{
+    color: black;
+    font-style: italic;
+}
+
+.hogCard{
+    border: solid 3px darkred;
+    background-color: gold;
+    text-align: center;
+    margin: 10px 10px;
+}
+/* @media (max-width: 720px) {
+    .studentForm{
+        justify-content: center;
+    }
+    
+    .intoCard{
+        justify-content: center;
+    }
+    .cardStyles{
+        flex-direction: column;
+       justify-content: center;
+    }
+    .firstYears{ 
+       flex-direction: column;
+       justify-content: center;
+    }
+    .voldArmy{
+        display: flex; 
+        flex-direction: column;
+        }
+    .hogCard{
+        flex: 1 25%;
+    };
+    .expelCard{
+        flex: 1 25%
+    };
+
+
+}; */

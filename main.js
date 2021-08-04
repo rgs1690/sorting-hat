@@ -18,10 +18,10 @@ const renderToDom =(divId, textToRender) => {
 
 const introCard = () => {
     const domString =`
-    <div class="card">
-     <div class="card-body">
-            <h5 class="card-title">Welcome to Hogwarts!</h5>
-            <p class="card-text">"Now slip me snug around your ears,<br>
+    <div class="intoCard">
+     <div class="intoCardBody">
+            <h5 class="introCardTitle">Welcome to Hogwarts!</h5>
+            <p class="introCardText">"Now slip me snug around your ears,<br>
             I've never yet been wrong,<br>
             I'll have alook inside your mind<br>
             And tell where you belong!”.</p>
@@ -34,12 +34,12 @@ const introCard = () => {
 
 const createForm = () => {
     const domString = `
-    <form id="studentForm">
+    <form class="studentForm" id="studentForm">
     <div class="mb-3">
       <label for="name" class="form-label">Student's Name:</label>
       <input type="text" class="form-control" id="input" required/>
       <div id="formText" class="form-text"></div>
-    <button type="submit"class="btn btn-primary">Start Sorting!</button>
+    <button type="submit"class="btn btn-form">Start Sorting!</button>
   </form>
      `
      renderToDom("#sortForm", domString);
@@ -58,10 +58,10 @@ const createStudentCard = (array) =>{
     let domString=""
     array.forEach((student, i) => {
     domString += `
-    <div class="card" style="width: 18rem;">
-        <div class="card-body">
-        <h5 class="card-title">${student.name}</h5>
-        <p class="card-text">${student.house}</p>
+    <div class="hogCard" style="width: 18rem;">
+        <div class="hogCardBody">
+        <h5 class="hogCardTitle">${student.name}</h5>
+        <p class="hogCardText">${student.house}</p>
         <button type="button" id=${i} class="btn btn-primary">Expel</button>
         </div>
     </div>
@@ -111,11 +111,12 @@ const expelledStudents = (array) => {
     let domString=""
     array.forEach((student, i) => {
     domString += `
-    <div class="card" style="width: 18rem;">
-        <div class="card-body">
-        <h5 class="card-title">${student.name}</h5>
-        <p class="card-text">${student.house}</p>
-        <button type="button" id=${i} class="btn btn-primary">YOURE EXPELLED</button>
+    <div class="expelCard" style="width: 18rem;">
+        <img src="https://ih1.redbubble.net/image.1950716546.8423/flat,128x128,075,f-pad,128x128,f8f8f8.jpg" class="card-img-top" alt="death eater">
+        <div class="expelCardBody">
+        <h5 class="expelCardTitle">${student.name} </h5>
+        <p class="expelCardText">Has joined Voldemort's Army!</p>
+       
         </div>
     </div>
     `
