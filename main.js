@@ -47,26 +47,27 @@ const addForm =(event) => {
 
 const createStudentCard = (array) =>{
     let domString=""
-    array.forEach((student) => {
+    array.forEach((student, i) => {
     domString += `
     <div class="card" style="width: 18rem;">
         <div class="card-body">
         <h5 class="card-title">${student.name}</h5>
         <p class="card-text">${student.house}</p>
-        <button type="button" id="expel"class="btn btn-primary">Expel</button>
+        <button type="button" id=${i} class="btn btn-primary">Expel</button>
         </div>
     </div>
     `
-    renderToDom("#firstYears", domString);
-    });
+});
+renderToDom("#firstYears", domString);
     
 };
 const sortButton= (event) => {
     event.preventDefault();
     const student = {
         name: document.querySelector("#input").value,
-        house: assignHouse(1,5)
-      };
+        house: assignHouse(1,5),
+       
+    };
       studentArray.push(student);
       createStudentCard(studentArray);
 };
@@ -84,8 +85,38 @@ const assignHouse = (min, max) => {
     };
     };
 
+const expelStudents = (event) => {
+    
+    const targetType = event.target.type; 
+    const targetId = event.target.id;
+    if (targetType === "button") {
+        const elm = studentArray.splice(targetId, 1);
+        voldArmy.push(elm[0]);
+        expelledStudents(voldArmy);
+        createStudentCard(studentArray);
+    
+    };
+};
+
+const expelledStudents = (array) => {
+    let domString=""
+    array.forEach((student, i) => {
+    domString += `
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+        <h5 class="card-title">${student.name}</h5>
+        <p class="card-text">${student.house}</p>
+        <button type="button" id=${i} class="btn btn-primary">YOURE EXPELLED</button>
+        </div>
+    </div>
+    `
+    });
+    renderToDom("#voldArmy", domString);
+};
+    ;
 const buttonEvents = () => {
     document.querySelector("#introCard").addEventListener("click", addForm);
+    document.querySelector("#firstYears").addEventListener("click", expelStudents);
 };
 
 const formEvents = () => {
@@ -97,6 +128,6 @@ const startApp = () => {
     introCard();
     createStudentCard(studentArray);
     buttonEvents();
-  };
+  }; 
 
 startApp(); 
