@@ -33,6 +33,7 @@ body{
 }
 .form-control{
     width: 300px;
+    justify-content: center;
 }
 .btn-form{
     background-color: gold;
@@ -48,7 +49,7 @@ body{
    margin: 10px;
 }
 .firstYears{
-    background-color: honeydew;
+    
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
@@ -56,7 +57,7 @@ body{
     margin-right: 50px; 
 }
 .voldArmy{
-    background-color: honeydew;
+    
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
@@ -85,7 +86,14 @@ body{
     text-align: center;
     margin: 10px 10px;
 }
-/* @media (max-width: 720px) {
+/* desktoop: 1200
+laptopL 1024
+tablet 768
+phone 480 */
+
+
+
+@media screen and (max-width: 670px) {
     .studentForm{
         justify-content: center;
     }
@@ -94,23 +102,42 @@ body{
         justify-content: center;
     }
     .cardStyles{
-        flex-direction: column;
-       justify-content: center;
+        display: block;
+ 
     }
     .firstYears{ 
        flex-direction: column;
        justify-content: center;
+       
     }
     .voldArmy{
         display: flex; 
         flex-direction: column;
-        }
-    .hogCard{
-        flex: 1 25%;
-    };
-    .expelCard{
-        flex: 1 25%
-    };
+        justify-content: center;    
+        margin: 0px;
+    }
+ 
 
 
-}; */
+};
+/* @media (max-width: 480px) {
+    .studentForm{
+        justify-content: center;
+    }
+    
+    .intoCard{
+        justify-content: center;
+    }
+    .cardStyles{
+  flex-direction: ;
+     */
+/* }     */
+    /* .firstYears{
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+    .voldArmy{
+        flex-direction: column;
+        flex-wrap: wrap;
+    } */
+/* } */

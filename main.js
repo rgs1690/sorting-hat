@@ -112,7 +112,7 @@ const expelledStudents = (array) => {
     array.forEach((student, i) => {
     domString += `
     <div class="expelCard" style="width: 18rem;">
-        <img src="https://ih1.redbubble.net/image.1950716546.8423/flat,128x128,075,f-pad,128x128,f8f8f8.jpg" class="card-img-top" alt="death eater">
+        <img src="https://pm1.narvii.com/5824/d2b3344a66fa8a70d68ee6a0d06953bdf7679ea7_128.jpg" class="card-img-top" alt="death eater">
         <div class="expelCardBody">
         <h5 class="expelCardTitle">${student.name} </h5>
         <p class="expelCardText">Has joined Voldemort's Army!</p>
