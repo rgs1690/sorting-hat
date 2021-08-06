@@ -83,10 +83,12 @@ body{
 }
 .expelCard {
     border: solid 3px black;
-    background-color: darkgreen;
+    background-color: rgb(4, 47, 4);
     text-align: center;
     margin: 10px 10px;
     font-family: 'Crimson Text', serif;
+    width: 100%;
+    height: fit-content;
 }
 .expelCardTitle{
     color: black;
@@ -107,12 +109,86 @@ body{
 }
 .hogCardTitle{
     font-weight: bolder;
-    font-size: larger;
+    font-size: x-large;
+
 }
-.expelBtn{
-    background-color: firebrick;
-    color:gold;
+.hogCardText{
+    font-size:larger;
     font-weight: bolder;
+}
+
+.expelBtn{
+    background-color: black;
+    color:red;
+    border: solid 2px white;
+    font-weight: bolder;
+    
+}
+.gryffindor{
+    border: solid 3px goldenrod;
+    background-color:firebrick;
+    text-align: center;
+    margin: 10px 10px;
+    font-family: 'Crimson Text', serif;
+    width: 100%;
+    height: fit-content;
+}
+
+.hufflepuff{
+    border: solid 3px black;
+    background-color: gold;
+    text-align: center;
+    margin: 10px 10px;
+    font-family: 'Crimson Text', serif;
+    width: 100%;
+    height: fit-content;
+}
+.ravenclaw{
+    border: solid 3px rgb(221, 121, 28);
+    background-color: blue;
+    text-align: center;
+    margin: 10px 10px;
+    font-family: 'Crimson Text', serif;
+    width: 100%;
+    height: fit-content;
+}
+.slytherin{
+    border: solid 3px white;
+    background-color:green;
+    text-align: center;
+    margin: 10px 10px;
+    font-family: 'Crimson Text', serif;
+    width: 100%;
+    height: fit-content;
+}
+
+#filterContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.ravenBtn{
+    border: solid 3px rgb(221, 121, 28);
+    background-color: blue;
+    font-weight: bold;
+}
+.gryfBtn{
+    border: solid 3px goldenrod;
+    background-color:firebrick;
+    font-weight: bold;
+}
+.slythBtn{
+    border: solid 3px white;
+    background-color:green;
+    font-weight: bold;
+}
+.huffBtn{
+    border: solid 3px black;
+    background-color: gold;
+    font-weight: bold;
+}
+.btn{
+    margin:10px;
 }
 @media screen and (max-width: 670px) {
     .studentForm{
@@ -137,7 +213,6 @@ body{
         justify-content: center;    
         margin: 0px;
     }
- 
 
 
 };
