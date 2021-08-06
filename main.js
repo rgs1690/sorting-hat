@@ -5,10 +5,10 @@ studentArray = []
 // Print buttons to dom
 const filterButtons = () => {
     const domString =`
-    <button type="button" class="btn btn-primary" id="ravenclaw">Ravenclaw</button>
-    <button type="button" class="btn btn-primary" id="gryffindor">Gryffindor</button>
-    <button type="button" class="btn btn-primary" id="slytherin">Slytherin</button>
-    <button type="button" class="btn btn-primary" id="hufflepuff">Hufflepuff</button>
+    <button type="button" class="btn ravenBtn" id="ravenclaw">Ravenclaw</button>
+    <button type="button" class="btn gryfBtn" id="gryffindor">Gryffindor</button>
+    <button type="button" class="btn slythBtn" id="slytherin">Slytherin</button>
+    <button type="button" class="btn huffBtn" id="hufflepuff">Hufflepuff</button>
     `;
     renderToDom("#filterContainer", domString);
 };
@@ -95,10 +95,6 @@ const sortButton= (event) => {
       createStudentCard(studentArray);   // creates student card and prints to dom
       document.querySelector("#studentForm").reset();  //clears form field after submission
     };
-      studentArray.push(student);
-      createStudentCard(studentArray);
-      document.querySelector("#studentForm").reset();
-    ;
 
     // function to assign house
 const assignHouse = (min, max) => {        // returns a value in the range of 
