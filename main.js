@@ -9,6 +9,7 @@ const filterButtons = () => {
     <button type="button" class="btn gryfBtn" id="gryffindor">Gryffindor</button>
     <button type="button" class="btn slythBtn" id="slytherin">Slytherin</button>
     <button type="button" class="btn huffBtn" id="hufflepuff">Hufflepuff</button>
+    <button type="button" class="btn allBtn" id="all">All Students</button>
     `;
     renderToDom("#filterContainer", domString);
 };
@@ -49,6 +50,22 @@ const createForm = () => {
      `
      renderToDom("#sortForm", domString);
 };
+//orders cards by name
+const orderByName = (array) => {        //has an array as a parameter
+    const cardNames = array.sort(function(a,b){ //
+        const nameOne = a.name.toUpperCase();
+        const nameTwo = b.name.toUpperCase();
+        if (nameOne < nameTwo) {            //if a is < b place b before a
+            return -1;
+        };
+        if (nameTwo > nameOne){         // if b is > a then place b first
+            return 1;
+        };
+        return 0;           // starting place to compare 1 or -1 to. 
+   
+    });
+};
+
 // Creates form after "let's begin" button is clicked.
 const addForm =(event) => {                      
     const targetId = event.target.id;   //adds id in event listener of #introCard to bubble
@@ -59,6 +76,7 @@ const addForm =(event) => {
        
     };
 };
+
 // builds the student cards and prints to dom
 const createStudentCard = (array) =>{
     let domString=""
@@ -88,12 +106,10 @@ const sortButton= (event) => {
         house: assignHouse(1,5),  //calls function that assigns house and assigns it to the house keyword in student object   
         
     };
-   
-    
-    
-    studentArray.push(student);       //pushes the newly input student to studentArray
-      createStudentCard(studentArray);   // creates student card and prints to dom
-      document.querySelector("#studentForm").reset();  //clears form field after submission
+     studentArray.push(student);       //pushes the newly input student to studentArray
+     orderByName(studentArray);         // orders cards before printing to the dom.
+     createStudentCard(studentArray);   // creates student card and prints to dom
+     document.querySelector("#studentForm").reset();  //clears form field after submission
     };
 
     // function to assign house
@@ -115,9 +131,7 @@ const assignHouse = (min, max) => {        // returns a value in the range of
     } else {
         return "hufflepuff";
     };
-    
-  
-    };
+        };
 
     //expel students function
 const expelStudents = (event) => {
@@ -153,7 +167,7 @@ const expelledStudents = (array) => {
     const filterStudents = (array, house) =>{
     return array.filter((student) => student.house === house);
     };
-   // handles button clicks for each house and prints the student cards only if the are in said house
+   // handles button clicks for each house and prints the student cards only if they are in said house
     const handleFilter = (event) => {
         event.preventDefault();
         if(event.target.id === "gryffindor") {
@@ -172,7 +186,10 @@ const expelledStudents = (array) => {
             const hufflepuffStudents = filterStudents(studentArray, event.target.id);
                  createStudentCard(hufflepuffStudents);
                 }    
-     };      
+        if(event.target.id === "all"){
+            createStudentCard(studentArray);
+        }
+            };      
 
         //event listeners for button events
     const buttonEvents = () => {
@@ -193,6 +210,7 @@ const expelledStudents = (array) => {
     introCard();
     filterButtons();
     createStudentCard(studentArray);
+    
     buttonEvents();
   }; 
 
