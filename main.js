@@ -49,6 +49,24 @@ const createForm = () => {
      `
      renderToDom("#sortForm", domString);
 };
+
+const orderByName = (array) => {
+    const cardNames = array.sort(function(a,b){
+        const nameOne = a.name.toUpperCase();
+        const nameTwo = b.name.toUpperCase();
+        if (nameOne < nameTwo) {
+            return -1;
+        };
+        if (nameTwo > nameOne){
+            return 1;
+        }
+        return 0;
+   
+    });
+}
+
+
+
 // Creates form after "let's begin" button is clicked.
 const addForm =(event) => {                      
     const targetId = event.target.id;   //adds id in event listener of #introCard to bubble
@@ -88,12 +106,10 @@ const sortButton= (event) => {
         house: assignHouse(1,5),  //calls function that assigns house and assigns it to the house keyword in student object   
         
     };
-   
-    
-    
-    studentArray.push(student);       //pushes the newly input student to studentArray
-      createStudentCard(studentArray);   // creates student card and prints to dom
-      document.querySelector("#studentForm").reset();  //clears form field after submission
+     studentArray.push(student);       //pushes the newly input student to studentArray
+     orderByName(studentArray);
+     createStudentCard(studentArray);   // creates student card and prints to dom
+     document.querySelector("#studentForm").reset();  //clears form field after submission
     };
 
     // function to assign house
@@ -193,6 +209,7 @@ const expelledStudents = (array) => {
     introCard();
     filterButtons();
     createStudentCard(studentArray);
+    
     buttonEvents();
   }; 
 
