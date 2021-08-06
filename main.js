@@ -98,7 +98,7 @@ const sortButton= (event) => {
       studentArray.push(student);
       createStudentCard(studentArray);
       document.querySelector("#studentForm").reset();
-    };
+    ;
 
     // function to assign house
 const assignHouse = (min, max) => {        // returns a value in the range of 
