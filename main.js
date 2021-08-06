@@ -95,7 +95,11 @@ const sortButton= (event) => {
       createStudentCard(studentArray);   // creates student card and prints to dom
       document.querySelector("#studentForm").reset();  //clears form field after submission
     };
- 
+      studentArray.push(student);
+      createStudentCard(studentArray);
+      document.querySelector("#studentForm").reset();
+    };
+
     // function to assign house
 const assignHouse = (min, max) => {        // returns a value in the range of 
     const houseNum =  Math.floor(Math.random() * (max - min) + min); 
@@ -184,7 +188,8 @@ const expelledStudents = (array) => {
 //event listener for submit button events
     const formEvents = () => {
     const formElement = document.querySelector("#studentForm");
-    formElement.addEventListener("submit", sortButton);git 
+    formElement.addEventListener("submit", sortButton);
+
     
 };
 // the init function that starts the app and prints elements to dom first and handles events second.

@@ -16,29 +16,46 @@ body{
     margin: 0 auto;
     float: none; 
     margin-bottom: 10px; 
+    font-family: 'Crimson Text', serif;
+    font-weight: bold;
+    font-size: larger;
+}
+.introCardTitle{
+    font-weight: bolder;
+    font-size: xx-large;
+}
+.introBtn{
+    background-color: indigo;
+    color: grey;
+    font-weight: bolder;
+ 
 }
 
 .intoCardBody{
     border: solid 5px darkslategrey;
     text-align: center;
 }
-.sortForm {
-    align-content: center;
-
+.studentForm {
+    font-family: 'Crimson Text', serif;
+    margin: 0 auto; 
+    width:250px;
 }
 .form-label{
+    
     color: gold;
     font-size: 20px;
-    font-weight: bold;
+    font-weight: bolder;
+    align-items: center;
 }
 .form-control{
     width: 300px;
-    justify-content: center;
+    align-content: center;
 }
 .btn-form{
     background-color: gold;
     color: firebrick;
     font-weight: bold;
+    align-items: center;
 }
 .card-title{
     color: red;
@@ -69,6 +86,7 @@ body{
     background-color: darkgreen;
     text-align: center;
     margin: 10px 10px;
+    font-family: 'Crimson Text', serif;
 }
 .expelCardTitle{
     color: black;
@@ -85,14 +103,17 @@ body{
     background-color: gold;
     text-align: center;
     margin: 10px 10px;
+    font-family: 'Crimson Text', serif;
 }
-/* desktoop: 1200
-laptopL 1024
-tablet 768
-phone 480 */
-
-
-
+.hogCardTitle{
+    font-weight: bolder;
+    font-size: larger;
+}
+.expelBtn{
+    background-color: firebrick;
+    color:gold;
+    font-weight: bolder;
+}
 @media screen and (max-width: 670px) {
     .studentForm{
         justify-content: center;
@@ -120,24 +141,3 @@ phone 480 */
 
 
 };
-/* @media (max-width: 480px) {
-    .studentForm{
-        justify-content: center;
-    }
-    
-    .intoCard{
-        justify-content: center;
-    }
-    .cardStyles{
-  flex-direction: ;
-     */
-/* }     */
-    /* .firstYears{
-        flex-direction: column;
-        flex-wrap: wrap;
-    }
-    .voldArmy{
-        flex-direction: column;
-        flex-wrap: wrap;
-    } */
-/* } */
