@@ -1,9 +1,7 @@
 body{
     background-image: url("https://badgerherald.com/wordpress/wp-content/uploads/2020/11/6402945529_654b96d482_b.jpg");
 };
-.first-years{
-    background-color: brown;
-};
+
 .card{
     margin: 20px 20px;
 }
@@ -28,8 +26,7 @@ body{
     background-color: indigo;
     color: grey;
     font-weight: bolder;
- 
-}
+ }
 
 .intoCardBody{
     border: solid 5px darkslategrey;
@@ -41,8 +38,8 @@ body{
     width:250px;
 }
 .form-label{
-    
-    color: gold;
+    background-color: gold ;
+    color:firebrick;
     font-size: 20px;
     font-weight: bolder;
     align-items: center;
@@ -187,6 +184,12 @@ body{
     background-color: gold;
     font-weight: bold;
 }
+.allBtn{
+    border: solid 3px gold;
+    background-color: purple;
+    font-weight: bold;
+}
+
 .btn{
     margin:10px;
 }
@@ -213,6 +216,4 @@ body{
         justify-content: center;    
         margin: 0px;
     }
-
-
 };
