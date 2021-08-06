@@ -4,9 +4,9 @@ body{
 .first-years{
     background-color: brown;
 };
-.card{
-    margin: 20px 20px;
-}
+/* .card{
+    margin: 20px 20px; */
+/* } */
 .introCardContainer {
     align-content: center;
 }
@@ -16,29 +16,46 @@ body{
     margin: 0 auto;
     float: none; 
     margin-bottom: 10px; 
+    font-family: 'Crimson Text', serif;
+    font-weight: bold;
+    font-size: larger;
+}
+.introCardTitle{
+    font-weight: bolder;
+    font-size: xx-large;
+}
+.introBtn{
+    background-color: indigo;
+    color: grey;
+    font-weight: bolder;
+ 
 }
 
 .intoCardBody{
     border: solid 5px darkslategrey;
     text-align: center;
 }
-.sortForm {
-    align-content: center;
-
+.studentForm {
+    font-family: 'Crimson Text', serif;
+    margin: 0 auto; 
+    width:250px;
 }
 .form-label{
+    
     color: gold;
     font-size: 20px;
-    font-weight: bold;
+    font-weight: bolder;
+    align-items: center;
 }
 .form-control{
     width: 300px;
-    justify-content: center;
+    align-content: center;
 }
 .btn-form{
     background-color: gold;
     color: firebrick;
     font-weight: bold;
+    align-items: center;
 }
 .card-title{
     color: red;
@@ -69,6 +86,10 @@ body{
     background-color: darkgreen;
     text-align: center;
     margin: 10px 10px;
+    font-family: 'Crimson Text', serif;
+    width: 100%;
+    height: fit-content;
+ 
 }
 .expelCardTitle{
     color: black;
@@ -85,13 +106,56 @@ body{
     background-color: gold;
     text-align: center;
     margin: 10px 10px;
+    font-family: 'Crimson Text', serif;
+    width: 100%;
+    height: fit-content; 
 }
-/* desktoop: 1200
-laptopL 1024
-tablet 768
-phone 480 */
+.hogCardTitle{
+    font-weight: bolder;
+    font-size: larger;
+}
+.expelBtn{
+    background-color: black;
+    color: red;
+    font-weight: bolder;
+}
+.gryffindor{
+    background-color: firebrick;
+    border: solid 5px gold;
+    text-align: center;
+    margin: 10px 10px;
+    font-family: 'Crimson Text', serif;
+    width: 100%;
+    height: fit-content; 
+}
+.slytherin {
+    background-color: green;
+    border: solid 5px white;
+    text-align: center;
+    margin: 10px 10px;
+    font-family: 'Crimson Text', serif;
+    width: 100%;
+    height: fit-content; 
+}
+.hufflepuff {
+    background-color: yellow;
+    border: solid 5px black;
+    text-align: center;
+    margin: 10px 10px;
+    font-family: 'Crimson Text', serif;
+    width: 100%;
+    height: fit-content; 
+}
 
-
+.ravenclaw{
+    background-color: blue;
+    border: solid 5px rgb(197, 153, 33);
+    text-align: center;
+    margin: 10px 10px;
+    font-family: 'Crimson Text', serif;
+    width: 100%;
+    height: fit-content; 
+}
 
 @media screen and (max-width: 670px) {
     .studentForm{
@@ -120,24 +184,3 @@ phone 480 */
 
 
 };
-/* @media (max-width: 480px) {
-    .studentForm{
-        justify-content: center;
-    }
-    
-    .intoCard{
-        justify-content: center;
-    }
-    .cardStyles{
-  flex-direction: ;
-     */
-/* }     */
-    /* .firstYears{
-        flex-direction: column;
-        flex-wrap: wrap;
-    }
-    .voldArmy{
-        flex-direction: column;
-        flex-wrap: wrap;
-    } */
-/* } */
