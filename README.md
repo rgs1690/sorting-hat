@@ -9,7 +9,7 @@ Sorting hat is a virtual sorting hat based on Harry Potter. It is a web page tha
 
 ## Features 
 - A form appears after clicking the "Let's Begin" button and allows users to enter a name that will be randomly sorted into a Hogwart's house.
-- After submitting, a card will generate and will be colored accoriging to their house assignment's color. 
+- After submitting, a card will generate and will be colored according to their house assignment's color. 
 - The cards will also be ordered alphabetically by name. 
 - Filter buttons are located above the card section and allow the user to see only the cards in a particular house.
 - A student can be expelled. This pushes the card into the "Voldemort's Army" section. The card will change styling to show a death eater image.
